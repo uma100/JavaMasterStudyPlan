@@ -1,6 +1,6 @@
 package com.example.javamasterclass.strings;
 
-import java.util.Scanner;
+import com.example.javamasterclass.strings.utilities.ConsolePrompt;
 
 public class PalindromeChecker {
 	
@@ -27,14 +27,8 @@ public class PalindromeChecker {
 	
 	public static void main(String[] args) {
 		
-		try (Scanner scanner = new Scanner(System.in)) {
-			System.out.print("Enter the word to check ");
-			String word = scanner.nextLine(); // Read a line of text
-			System.out.println(word + " is " + 
-					    (check(word) ? "palindrome" : "not a palindrome")
-					);
-		  }
-		  		        
-	    }
-
+		String word = ConsolePrompt.readString("Please enter the word to check");
+		System.out.println(word + " is " +  (check(word) ? "palindrome" : "not a palindrome"));
+		
+	  }
 }
